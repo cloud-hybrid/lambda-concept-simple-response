@@ -5,9 +5,6 @@
     "main": "src/index.js",
     "scripts": {},
     "repository": "git+https://github.com/cloud-hybrid/lambda-concept-simple-response.git",
-    "dependencies": {
-        "aws-xray-sdk-core": "^3.3.4"
-    },
     "devDependencies": {
         "@cloud-vault/http-responses-lambda-layer": "cloud-hybrid/http-responses-lambda-layer#Development",
         "aws-sdk": "^2.1048.0"
