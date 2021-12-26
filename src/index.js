@@ -2,7 +2,7 @@ const XRay = require("aws-xray-sdk-core");
 const AWS = XRay.captureAWS(require("aws-sdk"));
 
 // Layer Example
-const Layer = XRay.captureAWS(require("@cloud-vault/http-responses"));
+const Layer = XRay.captureAWS(require("@cloud-vault/http-responses-lambda-layer"));
 
 // Create Client outside of Handler for reuse
 const Lambda = new AWS.Lambda();
