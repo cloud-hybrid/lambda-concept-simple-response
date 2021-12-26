@@ -1,4 +1,3 @@
-// Layer Example
 const Layer = require("@cloud-vault/http-responses-lambda-layer");
 
 /*** Handler (Async Handler(s) *should* return a non-awaited promise */
