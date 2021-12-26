@@ -1,6 +1,9 @@
 const XRay = require("aws-xray-sdk-core");
 const AWS = XRay.captureAWS(require("aws-sdk"));
 
+// Layer Example
+const Layer = XRay.captureAWS(require("@cloud-vault/http-responses"));
+
 // Create Client outside of Handler for reuse
 const Lambda = new AWS.Lambda();
 
@@ -14,7 +17,10 @@ exports.handler = async function (event, context) {
     console.log("[Debug] Lambda Handler Context" + ":", serialize(context));
     console.log("[Debug] Event" + ":", serialize(event));
 
-    return getAccountSettings();
+    return {
+        "Account-Settings": getAccountSettings(),
+        "Layer-Example": Layer
+    };
 };
 
 // Use SDK Client
