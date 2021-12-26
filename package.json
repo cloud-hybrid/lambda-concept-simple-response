@@ -2,7 +2,7 @@
     "name": "lambda-concept-simple-response",
     "version": "0.0.1",
     "description": "Lambda POC, simple HTTP response",
-    "main": "src/index.js",
+    "main": "index.js",
     "scripts": {},
     "repository": "git+https://github.com/cloud-hybrid/lambda-concept-simple-response.git",
     "devDependencies": {
