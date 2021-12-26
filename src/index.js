@@ -1,6 +1,6 @@
 const Layer = require("@cloud-vault/http-responses-lambda-layer");
 
-/*** Handler (Async Handler(s) *should* return a non-awaited promise */
+/*** Handler (Async Handler(s) *should* return a non-awaited promise) */
 exports.handler = async function (event, context) {
     console.log("[Debug] Environment Variable(s)" + ":", serialize(process.env));
     console.log("[Debug] Lambda Handler Context" + ":", serialize(context));
