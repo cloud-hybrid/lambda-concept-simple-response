@@ -9,7 +9,7 @@ const Lambda = new AWS.Lambda();
 
 /*** Handler (Async Handler(s) *should* return a non-awaited promise */
 exports.handler = async function (event, context) {
-    event.Records.forEach(record => {
+    event.Records.forEach((record) => {
         console.log(record.body);
     });
 
