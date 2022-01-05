@@ -1,4 +1,4 @@
-const Layer = require("lambda-concept-simple-response-layer");
+const Layer = require("test-dependency");
 
 /*** Handler (Async Handler(s) *should* return a non-awaited promise) */
 exports.handler = async function (event, context) {
