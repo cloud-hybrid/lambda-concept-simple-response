@@ -108,6 +108,6 @@ A select number defaults are presented:
             └── package.json
    ```
    - Notice the `nodejs/index.js` file; the `index.js` becomes essentially a system-wide callable during a lambda runtime (I haven't tested such throughly yet, nor likely will I in the future, but in the case of at least a Lambda Layer's `handler` definition, the entry-point certainly does), relative to the `nodejs` directory's root. Then, due to NPM-related packaging, all sub-packages found immediately relative to the `index.js`'s root under the `node_modules` directory becomes importable.
-   - While other means for imports exist (i.e. `const $ = require("/opt/nodejs/node_modules/@cloud-technology/lambda-layer-concept/index.js")`), full
-   directory inclusion is incredibly difficult to locally test against, causes drift between local-development and cloud-deployment(s), and prevents
-   local development-related efficiencies like type-hinting, debugging, IDE extensions or other local practices from being able to take place.
+    - While other means for imports exist (i.e. `const $ = require("/opt/nodejs/node_modules/@cloud-technology/lambda-layer-concept/index.js")`), full
+    directory inclusion is incredibly difficult to locally test against, causes drift between local-development and cloud-deployment(s), and prevents
+    local development-related efficiencies like type-hinting, debugging, IDE extensions or other local practices from being able to take place.
