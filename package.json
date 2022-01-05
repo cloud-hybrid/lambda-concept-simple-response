@@ -6,7 +6,7 @@
     "scripts": {},
     "repository": "git+https://github.com/cloud-hybrid/lambda-concept-simple-response.git",
     "devDependencies": {
-        "@cloud-vault/http-responses-lambda-layer": "cloud-hybrid/http-responses-lambda-layer#Development",
+        "lambda-concept-simple-response-layer": "cloud-hybrid/lambda-concept-simple-response-layer#Development",
         "aws-sdk": "^2.1048.0"
     }
 }
