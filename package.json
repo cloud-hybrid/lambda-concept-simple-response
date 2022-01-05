@@ -1,12 +1,12 @@
 {
-    "name": "lambda-concept-simple-response",
-    "version": "0.0.1",
+    "name": "lambda-function-concept",
+    "version": "0.0.3",
     "description": "Lambda POC, simple HTTP response",
     "main": "index.js",
     "scripts": {},
     "repository": "git+https://github.com/cloud-hybrid/lambda-concept-simple-response.git",
     "devDependencies": {
-        "lambda-concept-simple-response-layer": "cloud-hybrid/lambda-concept-simple-response-layer#Development",
+        "@cloud-technology/lambda-layer-concept": "cloud-hybrid/lambda-layer-concept#Development",
         "aws-sdk": "^2.1048.0"
     }
 }
