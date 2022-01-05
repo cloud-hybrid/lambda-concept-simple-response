@@ -31,7 +31,7 @@ Given a Lambda Layer that's targetted for inclusion (`layer`):
 │           └── package.test.js
 ```
 
-A select number defaults are required:
+A select number defaults are presented:
 
 1. The layer's `dependencies` section needs to have reference to itself.
     - Example:
@@ -54,9 +54,9 @@ A select number defaults are required:
     ```
     - In order to achieve arbitrary Lambda Layer deployable(s), the exact name found in the layer's `dependencies` section to itself
     **also needs to be how the Lambda Function imports the package**. Example) `const $ = require("@cloud-technology/lambda-layer-concept");`
-        - No other means for creating layers that can be generically included during a pipeline's runtime *currently* exists.
-        - It's of course best to keep the name consistent in both the Lambda Layer's `package.json`'s `name` ***and*** `dependencies` sections; however,
-        it is not required.
-        - With limitations due to system-specific, local hoisting, the `dependencies` target URI **cannot be `"."` or other local-like URIs**. Either an
-        NPM reference, or more privately, a git-uri is required. See NPM packaging guide(s) for additional details as such is outside the scope of the
-        following repository's focus.
+    - No other means for creating layers that can be generically included during a pipeline's runtime *currently* exists.
+1. It's of course best to keep the name consistent in both the Lambda Layer's `package.json`'s `name` ***and*** `dependencies` sections; however,
+   it is not required.
+1. With limitations due to system-specific, local hoisting, the `dependencies` target URI **cannot be `"."` or other local-like URIs**. Either an
+   NPM reference, or more privately, a git-uri is required. See NPM packaging guide(s) for additional details as such is outside the scope of the
+   following repository's focus.
