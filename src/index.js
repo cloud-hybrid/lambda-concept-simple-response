@@ -1,4 +1,4 @@
-const Layer = require("@cloud-vault/http-responses-lambda-layer");
+const Layer = require("lambda-concept-simple-response-layer");
 
 /*** Handler (Async Handler(s) *should* return a non-awaited promise) */
 exports.handler = async function (event, context) {
