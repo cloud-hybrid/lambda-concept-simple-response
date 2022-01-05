@@ -4,7 +4,7 @@
     "description": "Lambda POC, simple HTTP response",
     "main": "index.js",
     "scripts": {},
-    "repository": "git+https://github.com/cloud-hybrid/lambda-concept-simple-response.git",
+    "repository": "git+https://github.com/cloud-hybrid/lambda-function-concept.git",
     "devDependencies": {
         "@cloud-technology/lambda-layer-concept": "cloud-hybrid/lambda-layer-concept#Development",
         "aws-sdk": "^2.1048.0"
