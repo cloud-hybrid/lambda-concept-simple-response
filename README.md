@@ -2,7 +2,14 @@
 
 ***Lambda POC***
 
-## Layers ##
+## Important Deployment Considerations ##
+
+With the following repository being that of a Lambda Function, careful considerations
+need to be made when creating generic, widely accepted & deployable cloud resources.
+
+To begin with the most extreme case...
+
+### Lambda Layers ###
 
 Given a Lambda Layer that's targetted for inclusion (`layer`):
 
@@ -31,7 +38,7 @@ Given a Lambda Layer that's targetted for inclusion (`layer`):
 │           └── package.test.js
 ```
 
-A select number defaults are presented:
+A select number defaults are presented, most of which are *requirements*:
 
 1. The layer's `dependencies` section needs to have reference to itself.
     - Example:
@@ -75,6 +82,9 @@ A select number defaults are presented:
         }
     }
     ```
+    - Failure to include the layer as a `devDependency`, and instead, as a `dependency`, won't necessarily result in functional failure(s); however,
+    the purpose of a Lambda Layer Resource would be defeated. But this isn't to say such a design pattern isn't without its own benefits. Most
+    notably, the deployment complexity becomes... much, much simpler, and documentation as the following wouldn't be required...
 1. Construction of the layer needs to follow an incredibly strict structure in order to be impliclitly included during a `node.js` runtime:
    ```
    distribution/library
