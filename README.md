@@ -60,3 +60,51 @@ A select number defaults are presented:
 1. With limitations due to system-specific, local hoisting, the `dependencies` target URI **cannot be `"."` or other local-like URIs**. Either an
    NPM reference, or more privately, a git-uri is required. See NPM packaging guide(s) for additional details as such is outside the scope of the
    following repository's focus.
+1. To faciliatate local development, include the Lambda Layer within the Lambda Function's `package.json`'s `devDependencies` section:
+    ```json
+    {
+        "name": "lambda-function-concept",
+        "version": "0.0.3",
+        "description": "Lambda POC",
+        "main": "index.js",
+        "scripts": {},
+        "repository": "git+https://github.com/cloud-hybrid/lambda-function-concept.git",
+        "devDependencies": {
+        // --> "@cloud-technology/lambda-layer-concept": "cloud-hybrid/lambda-layer-concept#Development",
+            "aws-sdk": "^2.1048.0"
+        }
+    }
+    ```
+1. Construction of the layer needs to follow an incredibly strict structure in order to be impliclitly included during a `node.js` runtime:
+   ```
+   distribution/library
+    └─ layer
+        └── nodejs
+            ├── README.md
+            ├── index.js
+            ├── node_modules
+            │   ├── @cloud-technology
+            │   │   └── lambda-layer-concept
+            │   │       ├── Layer-Template.Yaml
+            │   │       ├── README.md
+            │   │       ├── documentation
+            │   │       │   └── NPM-Usage.md
+            │   │       ├── index.js
+            │   │       ├── package.json
+            │   │       ├── scripts
+            │   │       │   ├── build.js
+            │   │       │   ├── copy.js
+            │   │       │   ├── install.js
+            │   │       │   ├── package.json
+            │   │       │   └── subprocess.js
+            │   │       ├── src
+            │   │       │   ├── index.js
+            │   │       │   └── uuid.js
+            │   │       └── unit-testing
+            │   │           ├── index.test.js
+            │   │           └── package.test.js
+            │   └── uuid
+            ├── package-lock.json
+            └── package.json
+   ```
+   - Notice the `nodejs/index.js` file found; the `index.js` becomes essentially a system-wide callable during a lambda runtime as (I believe as I haven't tested such throughly yet, nor likely will I in the future), relative to the `nodejs` directory's root. Then, due to NPM-related packaging, all sub-packages found immediately relative to the `index.js`'s root under the `node_modules` directory becomes importable.
