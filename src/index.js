@@ -13,7 +13,7 @@ exports.handler = async function (event, context) {
                 "Content-Type": "Application/JSON",
             },
             body: JSON.stringify({
-                Message: Layer
+                Message: Layer.UUID.v4()
             }, null, 4)
         });
     });
