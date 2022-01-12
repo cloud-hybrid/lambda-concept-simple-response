@@ -1,6 +1,6 @@
 {
     "name": "lambda-function-concept",
-    "version": "0.0.3",
+    "version": "0.1.4",
     "description": "Lambda POC, simple HTTP response",
     "main": "index.js",
     "scripts": {},
